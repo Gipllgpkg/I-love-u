@@ -1,2 +1,107 @@
-# I-love-u
-I love u
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>เป็นแฟนกันน่ะ 💕</title>
+
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: "Prompt", sans-serif;
+      background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+    }
+
+    .box {
+      background: white;
+      padding: 30px;
+      border-radius: 20px;
+      text-align: center;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+      max-width: 350px;
+      width: 90%;
+    }
+
+    h1 {
+      font-size: 20px;
+      margin-bottom: 20px;
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    button {
+      border: none;
+      border-radius: 30px;
+      padding: 12px 25px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    #yesBtn {
+      background: #ff5e78;
+      color: white;
+      font-size: 16px;
+    }
+
+    #noBtn {
+      background: #ccc;
+      color: #333;
+    }
+
+    .message {
+      margin-top: 20px;
+      font-size: 18px;
+      color: #ff3366;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="box">
+    <h1>เราก็คุยกันมานานแล้ว เป็นแฟนกันน่ะ 💖</h1>
+
+    <div class="buttons">
+      <button id="yesBtn" onclick="yes()">เป็น</button>
+      <button id="noBtn" onclick="no()">ไม่เป็น</button>
+    </div>
+
+    <div class="message" id="message"></div>
+  </div>
+
+  <script>
+    let noCount = 0;
+    let yesSize = 16;
+
+    function no() {
+      noCount++;
+      yesSize += 6;
+
+      const yesBtn = document.getElementById("yesBtn");
+      yesBtn.style.fontSize = yesSize + "px";
+      yesBtn.style.padding = (12 + noCount * 2) + "px " + (25 + noCount * 4) + "px";
+
+      if (noCount > 5) {
+        document.getElementById("message").innerText = "เราเสียใจนะะ 😭😭";
+      }
+    }
+
+    function yes() {
+      document.querySelector(".box").innerHTML = `
+        <h1>เย่ๆ น่ารักที่สุดดดด 💕</h1>
+        <div class="message">ที่รักกค้าบบ 🥰💖</div>
+      `;
+    }
+  </script>
+
+</body>
+</html>
